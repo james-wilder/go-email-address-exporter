@@ -1,0 +1,26 @@
+<html>
+<body>
+  <h1>Hiya</h1>
+  {{range .Accounts}}
+  <div>
+    {{.Name}}
+    {{.Hostname}}
+    <form method="POST">
+      <input type="hidden" name="name" value="{{.Name}}"/>
+      <input type="hidden" name ="action" value="delete"/>
+      <input type="submit" value="Delete"/>
+    </form>
+  </div>
+  {{end}}
+  <div>
+    <form method="POST">
+      Name
+      <input type="text" name="name" value=""/>
+      Hostname
+      <input type="text" name="hostname" value=""/>
+      <input type="hidden" name ="action" value="add"/>
+      <input type="submit" value="Add"/>
+    </form>
+  </div>
+</body>
+</html>
